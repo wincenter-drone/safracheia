@@ -1,5 +1,5 @@
 import { AppLayout } from "@/components/layout/AppLayout";
-import { WeatherWidget } from "@/components/weather/WeatherWidget";
+import { LocationWeather } from "@/components/weather/LocationWeather";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Cloud, 
@@ -21,8 +21,8 @@ const Clima = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <WeatherWidget />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          <LocationWeather />
           
           <Card className="shadow-soft">
             <CardHeader>
@@ -32,36 +32,36 @@ const Clima = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Droplets className="w-5 h-5 text-sky" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
+                <div className="flex items-center gap-2 sm:gap-3 p-3 rounded-lg bg-secondary/50">
+                  <Droplets className="w-4 h-4 sm:w-5 sm:h-5 text-sky" />
                   <div>
-                    <p className="text-sm text-muted-foreground">Umidade</p>
-                    <p className="font-semibold">65%</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Umidade</p>
+                    <p className="font-semibold text-sm sm:text-base">Dinâmica</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Wind className="w-5 h-5 text-earth" />
+                <div className="flex items-center gap-2 sm:gap-3 p-3 rounded-lg bg-secondary/50">
+                  <Wind className="w-4 h-4 sm:w-5 sm:h-5 text-earth" />
                   <div>
-                    <p className="text-sm text-muted-foreground">Vento</p>
-                    <p className="font-semibold">12 km/h</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Vento</p>
+                    <p className="font-semibold text-sm sm:text-base">Dinâmico</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Eye className="w-5 h-5 text-success" />
+                <div className="flex items-center gap-2 sm:gap-3 p-3 rounded-lg bg-secondary/50">
+                  <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-success" />
                   <div>
-                    <p className="text-sm text-muted-foreground">Visibilidade</p>
-                    <p className="font-semibold">10 km</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Visibilidade</p>
+                    <p className="font-semibold text-sm sm:text-base">Dinâmica</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Gauge className="w-5 h-5 text-warning" />
+                <div className="flex items-center gap-2 sm:gap-3 p-3 rounded-lg bg-secondary/50">
+                  <Gauge className="w-4 h-4 sm:w-5 sm:h-5 text-warning" />
                   <div>
-                    <p className="text-sm text-muted-foreground">Pressão</p>
-                    <p className="font-semibold">1013 hPa</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Pressão</p>
+                    <p className="font-semibold text-sm sm:text-base">Dinâmica</p>
                   </div>
                 </div>
               </div>

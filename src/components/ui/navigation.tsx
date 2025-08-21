@@ -19,11 +19,19 @@ const navigationItems = [
   { name: "Relatórios", href: "/relatorios", icon: BarChart3 },
 ];
 
-export function Navigation() {
+interface NavigationProps {
+  onClose?: () => void;
+}
+
+export function Navigation({ onClose }: NavigationProps) {
   const location = useLocation();
 
+  const handleLinkClick = () => {
+    onClose?.();
+  };
+
   return (
-    <nav className="w-64 min-h-screen bg-card border-r border-border p-4">
+    <nav className="w-64 min-h-screen bg-card border-r border-border p-4 relative">
       <div className="mb-8">
         <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
           Safra Cheia
@@ -40,6 +48,7 @@ export function Navigation() {
             <Link
               key={item.name}
               to={item.href}
+              onClick={handleLinkClick}
               className={cn(
                 "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group",
                 isActive
@@ -60,6 +69,7 @@ export function Navigation() {
       <div className="absolute bottom-4 left-4 right-4">
         <Link
           to="/configuracoes"
+          onClick={handleLinkClick}
           className="flex items-center gap-3 px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all duration-200"
         >
           <Settings className="w-5 h-5" />
