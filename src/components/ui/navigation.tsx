@@ -26,7 +26,7 @@ export function Navigation() {
     <nav className="w-64 min-h-screen bg-card border-r border-border p-4">
       <div className="mb-8">
         <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          AgroControl
+          Safra Cheia
         </h1>
         <p className="text-sm text-muted-foreground">Gestão Operacional</p>
       </div>
