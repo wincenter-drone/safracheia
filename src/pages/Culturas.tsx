@@ -11,7 +11,9 @@ import {
   Calendar,
   TrendingUp,
   Droplets,
-  Thermometer
+  Thermometer,
+  Edit,
+  Trash2
 } from "lucide-react";
 
 const Culturas = () => {
@@ -95,7 +97,7 @@ const Culturas = () => {
             </p>
           </div>
           <div className="flex gap-3">
-            <Button variant="outline">
+            <Button variant="outline" onClick={() => window.location.href = '/culturas/galeria'}>
               <Camera className="w-4 h-4 mr-2" />
               Galeria de Fotos
             </Button>
@@ -218,6 +220,16 @@ const Culturas = () => {
                     <Button size="sm" variant="outline" className="flex-1">
                       <Droplets className="w-4 h-4 mr-2" />
                       Aplicar
+                    </Button>
+                  </div>
+                  <div className="flex gap-2 mt-2">
+                    <Button size="sm" variant="outline" className="flex-1">
+                      <Edit className="w-4 h-4 mr-2" />
+                      Editar
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1 text-destructive hover:text-destructive">
+                      <Trash2 className="w-4 h-4 mr-2" />
+                      Excluir
                     </Button>
                   </div>
                 </div>

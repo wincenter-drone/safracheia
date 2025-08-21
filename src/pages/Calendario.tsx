@@ -8,7 +8,9 @@ import {
   Clock,
   Sprout,
   Droplets,
-  Bug
+  Bug,
+  Edit,
+  Trash2
 } from "lucide-react";
 
 const Calendario = () => {
@@ -130,13 +132,23 @@ const Calendario = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <Badge variant="outline" className={getStatusColor(atividade.status)}>
-                      {atividade.status}
-                    </Badge>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {new Date(atividade.data).toLocaleDateString('pt-BR')}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <div className="text-right">
+                      <Badge variant="outline" className={getStatusColor(atividade.status)}>
+                        {atividade.status}
+                      </Badge>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {new Date(atividade.data).toLocaleDateString('pt-BR')}
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="outline">
+                        <Edit className="w-4 h-4" />
+                      </Button>
+                      <Button size="sm" variant="outline" className="text-destructive hover:text-destructive">
+                        <Trash2 className="w-4 h-4" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ))}

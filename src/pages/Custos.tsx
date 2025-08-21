@@ -10,7 +10,9 @@ import {
   Wrench,
   Truck,
   Sprout,
-  FileText
+  FileText,
+  Edit,
+  Trash2
 } from "lucide-react";
 
 const Custos = () => {
@@ -148,13 +150,23 @@ const Custos = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-lg font-bold text-foreground">
-                      R$ {custo.valor.toLocaleString('pt-BR')}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {new Date(custo.data).toLocaleDateString('pt-BR')}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <div className="text-right">
+                      <p className="text-lg font-bold text-foreground">
+                        R$ {custo.valor.toLocaleString('pt-BR')}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {new Date(custo.data).toLocaleDateString('pt-BR')}
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="outline">
+                        <Edit className="w-4 h-4" />
+                      </Button>
+                      <Button size="sm" variant="outline" className="text-destructive hover:text-destructive">
+                        <Trash2 className="w-4 h-4" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -164,7 +176,10 @@ const Custos = () => {
 
         {/* Actions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <Card 
+            className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer" 
+            onClick={() => window.location.href = '/custos?categoria=operacional'}
+          >
             <CardContent className="p-6 text-center">
               <Truck className="w-12 h-12 text-sky mx-auto mb-4" />
               <h3 className="font-semibold text-foreground mb-2">Custos Operacionais</h3>
@@ -172,7 +187,10 @@ const Custos = () => {
             </CardContent>
           </Card>
 
-          <Card className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <Card 
+            className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer"
+            onClick={() => window.location.href = '/custos?categoria=implementos'}
+          >
             <CardContent className="p-6 text-center">
               <Wrench className="w-12 h-12 text-earth mx-auto mb-4" />
               <h3 className="font-semibold text-foreground mb-2">Implementos</h3>
@@ -180,7 +198,10 @@ const Custos = () => {
             </CardContent>
           </Card>
 
-          <Card className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <Card 
+            className="shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer"
+            onClick={() => window.location.href = '/custos?categoria=insumos'}
+          >
             <CardContent className="p-6 text-center">
               <Sprout className="w-12 h-12 text-success mx-auto mb-4" />
               <h3 className="font-semibold text-foreground mb-2">Insumos</h3>
