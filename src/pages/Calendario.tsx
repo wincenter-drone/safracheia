@@ -57,7 +57,10 @@ const Calendario = () => {
               Planejamento e controle das atividades da fazenda
             </p>
           </div>
-          <Button className="bg-gradient-primary shadow-soft">
+          <Button 
+            className="bg-gradient-primary shadow-soft"
+            onClick={() => window.location.href = '/calendario/nova'}
+          >
             <Plus className="w-4 h-4 mr-2" />
             Nova Atividade
           </Button>

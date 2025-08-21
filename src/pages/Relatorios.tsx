@@ -69,7 +69,10 @@ const Relatorios = () => {
               Análises e acompanhamento das operações
             </p>
           </div>
-          <Button className="bg-gradient-primary shadow-soft">
+          <Button 
+            className="bg-gradient-primary shadow-soft"
+            onClick={() => window.location.href = '/relatorios/novo'}
+          >
             <FileText className="w-4 h-4 mr-2" />
             Novo Relatório
           </Button>
@@ -162,7 +165,11 @@ const Relatorios = () => {
                           </div>
                         </div>
                       </div>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => window.location.href = `/relatorios/${relatorio.id}/download`}
+                      >
                         <Download className="w-4 h-4" />
                       </Button>
                     </div>

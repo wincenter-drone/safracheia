@@ -101,7 +101,10 @@ const Culturas = () => {
               <Camera className="w-4 h-4 mr-2" />
               Galeria de Fotos
             </Button>
-            <Button className="bg-gradient-primary shadow-soft">
+            <Button 
+              className="bg-gradient-primary shadow-soft"
+              onClick={() => window.location.href = '/culturas/nova'}
+            >
               <Plus className="w-4 h-4 mr-2" />
               Nova Cultura
             </Button>
@@ -213,21 +216,45 @@ const Culturas = () => {
 
                 <div className="pt-4 border-t border-border">
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.location.href = `/culturas/${cultura.id}/fotos`}
+                    >
                       <Camera className="w-4 h-4 mr-2" />
                       Fotos
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.location.href = `/culturas/${cultura.id}/aplicar`}
+                    >
                       <Droplets className="w-4 h-4 mr-2" />
                       Aplicar
                     </Button>
                   </div>
                   <div className="flex gap-2 mt-2">
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.location.href = `/culturas/${cultura.id}/editar`}
+                    >
                       <Edit className="w-4 h-4 mr-2" />
                       Editar
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1 text-destructive hover:text-destructive">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1 text-destructive hover:text-destructive"
+                      onClick={() => {
+                        if (confirm('Tem certeza que deseja excluir esta cultura?')) {
+                          window.location.href = `/culturas/${cultura.id}/excluir`;
+                        }
+                      }}
+                    >
                       <Trash2 className="w-4 h-4 mr-2" />
                       Excluir
                     </Button>
@@ -255,7 +282,10 @@ const Culturas = () => {
               <p className="text-muted-foreground mb-4">
                 Arraste e solte imagens ou clique para selecionar
               </p>
-              <Button variant="outline">
+              <Button 
+                variant="outline"
+                onClick={() => window.location.href = '/culturas/upload'}
+              >
                 Selecionar Arquivos
               </Button>
             </div>

@@ -70,11 +70,14 @@ const Custos = () => {
             </p>
           </div>
           <div className="flex gap-3">
-            <Button variant="outline">
+            <Button variant="outline" onClick={() => window.location.href = '/relatorios'}>
               <FileText className="w-4 h-4 mr-2" />
               Relatório
             </Button>
-            <Button className="bg-gradient-primary shadow-soft">
+            <Button 
+              className="bg-gradient-primary shadow-soft"
+              onClick={() => window.location.href = '/custos/novo'}
+            >
               <Plus className="w-4 h-4 mr-2" />
               Novo Custo
             </Button>

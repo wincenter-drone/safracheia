@@ -69,7 +69,10 @@ const Index = () => {
               Visão geral das operações da fazenda
             </p>
           </div>
-          <Button className="bg-gradient-primary shadow-soft hover:shadow-medium transition-all duration-300">
+          <Button 
+            className="bg-gradient-primary shadow-soft hover:shadow-medium transition-all duration-300"
+            onClick={() => navigate('/calendario')}
+          >
             <Plus className="w-4 h-4 mr-2" />
             Nova Atividade
           </Button>
